@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NarrowItDown"
+    tools:layout_editor_absoluteY="81dp">
+
+    <CheckBox
+        android:id="@+id/checkAsian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Asian"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/checkItalian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Italian"
+        app:layout_constraintBottom_toTopOf="@+id/checkFrench"
+        app:layout_constraintStart_toStartOf="@+id/checkFrench" />
+
+    <CheckBox
+        android:id="@+id/checkMexician"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Mexician"
+        app:layout_constraintStart_toStartOf="@+id/checkAsian"
+        app:layout_constraintTop_toBottomOf="@+id/checkAsian" />
+
+    <CheckBox
+        android:id="@+id/checkFrench"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:text="French"
+        app:layout_constraintBottom_toTopOf="@+id/chackTradionalAmerican"
+        app:layout_constraintStart_toStartOf="@+id/chackTradionalAmerican" />
+
+    <CheckBox
+        android:id="@+id/checkMiddleEastern"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:text="Middle Eastern"
+        app:layout_constraintStart_toStartOf="@+id/checkMexician"
+        app:layout_constraintTop_toBottomOf="@+id/checkMexician" />
+
+    <CheckBox
+        android:id="@+id/chackTradionalAmerican"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="Traditional American"
+        app:layout_constraintBottom_toBottomOf="@+id/checkMiddleEastern"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkMiddleEastern" />
+
+    <CheckBox
+        android:id="@+id/checkSouthAmerican"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="19dp"
+        android:text="South American"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkMiddleEastern" />
+
+    <CheckBox
+        android:id="@+id/checkMediterrainian"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="Mediterrainian"
+        app:layout_constraintStart_toStartOf="@+id/chackTradionalAmerican"
+        app:layout_constraintTop_toBottomOf="@+id/chackTradionalAmerican" />
+
+    <SeekBar
+        android:id="@+id/milesBar"
+        android:layout_width="267dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Distance"
+        app:layout_constraintBottom_toTopOf="@+id/miles"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/miles"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_marginTop="52dp"
+        android:text="0mi"
+        app:layout_constraintEnd_toEndOf="@+id/milesBar"
+        app:layout_constraintStart_toStartOf="@+id/milesBar"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="40dp"
+        android:text="Distance"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkSouthAmerican" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="32dp"
+        android:text="Cuisine"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
