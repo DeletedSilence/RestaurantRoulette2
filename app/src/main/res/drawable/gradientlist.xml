@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animation-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:drawable="@drawable/gradient"
+    <item android:drawable="@drawable/dineicon2"
         android:duration="4000"/>
 
-    <item android:drawable="@drawable/gradient2"
+    <item android:drawable="@drawable/appleicon"
         android:duration="4000"/>
 
-    <item android:drawable="@drawable/gradient3"
+    <item android:drawable="@drawable/icecreamicon"
+        android:duration="4000"/>
+
+    <item android:drawable="@drawable/drinkicon"
         android:duration="4000"/>
 
 </animation-list>

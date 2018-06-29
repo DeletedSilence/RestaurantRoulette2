@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:id="@+id/homescreen"
-    android:background="@drawable/gradientlist">
+    android:background="#fffafa"
+    >
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -25,13 +26,20 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <ImageView
+        android:id="@+id/animatefood"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:src="@drawable/gradientlist"/>
+
     <Button
         android:id="@+id/randombutton"
         android:layout_width="139dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="82dp"
         android:background="@drawable/roundbutton"
         android:gravity="center"
         android:padding="10sp"
@@ -45,10 +53,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="185dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/roundbutton"
         android:gravity="center"
-        android:text="Narow It Down"
+        android:text="Narrow It Down"
         android:textSize="17sp"
         android:textStyle="bold|italic" />
 

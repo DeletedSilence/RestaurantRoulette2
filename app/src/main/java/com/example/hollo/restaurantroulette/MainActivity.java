@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -24,6 +25,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    public void randomize(){
+        Button random = (Button)findViewById(R.id.randombutton);
+        random.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent randomizeit = new Intent(MainActivity.this,MapsActivity.class);
+                startActivity(randomizeit);
+            }
+        });
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +42,20 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         narrow();
+        randomize();
         RelativeLayout home = findViewById(R.id.homescreen);
-        AnimationDrawable animationDrawable=(AnimationDrawable)home.getBackground();
+        ImageView animate = (ImageView)findViewById(R.id.animatefood);
+        AnimationDrawable animation=(AnimationDrawable)animate.getDrawable();
+        animation.setEnterFadeDuration(2000);
+        animation.setExitFadeDuration(4000);
+        animation.start();
+        /*AnimationDrawable animationDrawable=(AnimationDrawable)home.getBackground();
         animationDrawable.setEnterFadeDuration(2000);
         animationDrawable.setExitFadeDuration(4000);
         animationDrawable.start();
         //toolbar.setTitle("Restaurant Roulette");
 
-        Button random = (Button)findViewById(R.id.randombutton);
+        /*Button random = (Button)findViewById(R.id.randombutton);
         //Button narrow = (Button)findViewById(R.id.narrowbutton);
 
         random.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Randomizing",Toast.LENGTH_LONG).show();
             }
         });
-        /*narrow.setOnClickListener(new View.OnClickListener() {
+        narrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(),"Narrowing",Toast.LENGTH_LONG).show();
