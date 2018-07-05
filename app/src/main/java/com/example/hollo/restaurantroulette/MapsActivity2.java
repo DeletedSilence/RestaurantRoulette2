@@ -62,11 +62,18 @@ public class MapsActivity2 extends AppCompatActivity implements OnMapReadyCallba
 
     int PROXIMITY_RADIUS = 10000;
     double latitude, longitude;
+    int mile = 0;
+    String keyword = "";
+    int price = 99;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps2);
+
+        keyword = getIntent().getStringExtra("place");
+        mile = getIntent().getIntExtra("mile",0);
+        price = getIntent().getIntExtra("price",99);
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             checkLocationPermission();
         }
@@ -130,8 +137,22 @@ public class MapsActivity2 extends AppCompatActivity implements OnMapReadyCallba
     private String getUrl(double latitude,double longitude, String nearbyPlace){
         StringBuilder googlePlaceUrl = new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
         googlePlaceUrl.append("location="+latitude+","+longitude);
-        googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
+        if(mile != 0){
+            int rad = mile*1610;
+            googlePlaceUrl.append("&radius="+rad);
+        }
+        else{
+            googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
+        }
+        //googlePlaceUrl.append("&radius="+PROXIMITY_RADIUS);
         googlePlaceUrl.append("&type="+nearbyPlace);
+        if(!keyword.equals("")){
+            googlePlaceUrl.append("&keyword="+keyword);
+
+        }
+        if(price!=99){
+            googlePlaceUrl.append("&minprice="+price);
+        }
         googlePlaceUrl.append("&sensor=true");
         googlePlaceUrl.append("&key="+"AIzaSyAakFtnW8Zlqya7snYTSqbM6MN14JCR2Hs");
         return googlePlaceUrl.toString();

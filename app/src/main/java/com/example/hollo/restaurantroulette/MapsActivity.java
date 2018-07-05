@@ -165,7 +165,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         Object datatransfer[] = new Object[2];
         datatransfer[0]=mMap;
         datatransfer[1]=url;
-        GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+        GetNearbyPlaces2 getNearbyPlacesData = new GetNearbyPlaces2();
         getNearbyPlacesData.execute(datatransfer);
 
     }
@@ -184,6 +184,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
 
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,DEFAULT_ZOOM));
+        showRestaurants();
 
 
         if(client!=null){
